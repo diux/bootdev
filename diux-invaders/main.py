@@ -11,6 +11,9 @@ def main():
     while True:
         log_state()
 
+        clock = pygame.time.Clock()
+        dt = 0
+
         # Get out of the game loop if needed
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -18,8 +21,7 @@ def main():
 
         screen.fill("black")
         pygame.display.flip()
-
-    
+        dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
     main()
